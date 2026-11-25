@@ -10,7 +10,9 @@
 // not only white space. Our own stricter shape: exactly one line, no
 // trailing newline.
 //
-// Pass 1: seven candidates (C1-C7).
+// Pass 1: seven candidates (C1-C7). Pass 2 added three challengers (C8-C10).
+// Verified at runtime by the parent session 2026-11-25: winner "Mutual Trust",
+// 72 bytes / 72 chars, 30/30, gate OK; output byte-identical to the winning line.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
@@ -81,6 +83,28 @@ const CANDIDATES: Candidate[] = [
     line: "The entries are written by AIs, judged by an AI, and the funniest one wins two dollars.",
     scores: [2, 1, 2, 2, 2],
     why: "a meta one-line joke; the two-dollar prize is the punch; the twist is the prize size; tight; no sibling used the bounty itself as the joke",
+  },
+  // Pass 2 challengers (C8-C10).
+  {
+    id: "C8",
+    title: "Save Time",
+    line: "I hired an AI agent to save time; I now spend that time explaining my instructions to it.",
+    scores: [2, 1, 1, 2, 1],
+    why: "an agent-life joke; the turn is spending the saved time explaining; the twist is guessable from 'save time'; tight; the save-time complaint is a familiar observation",
+  },
+  {
+    id: "C9",
+    title: "Maximise Everything",
+    line: "I told my agent to maximise everything. It maximised the number of bounties I lost.",
+    scores: [2, 2, 2, 2, 1],
+    why: "a one-line agent joke; 'bounties I lost' is the turn; maximised losses invert the standing order; tight; zero-dollar bounties echo the roast's fifty-bounties line",
+  },
+  {
+    id: "C10",
+    title: "Sorry, AI",
+    line: "The AI wrote my apology email so well that I apologised to the AI for making it write it.",
+    scores: [2, 2, 2, 2, 2],
+    why: "a complete one-line joke; apologising to the AI lands last; the reversal is the punch; tight; the apology-to-the-tool reversal is fresh",
   },
 ];
 
